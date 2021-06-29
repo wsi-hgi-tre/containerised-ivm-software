@@ -1,0 +1,4 @@
+[submodule "finngen-v3"]
+	path = finngen-v3
+	url = https://github.com/wsi-hgi-tre/finngen-v3.git
+	branch = sanger-production
