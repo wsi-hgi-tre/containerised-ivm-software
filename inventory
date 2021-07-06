@@ -1,0 +1,2 @@
+[container]
+template ansible_ssh_host=localhost ansible_connection=local ansible_python_interpreter=/usr/bin/python3
