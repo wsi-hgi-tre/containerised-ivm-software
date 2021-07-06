@@ -9,5 +9,9 @@ RUN apt update \
 # Copy and run Ansible playbooks locally
 COPY finngen-v3/iac/build/ivm/ansible/playbooks /build
 COPY inventory /build/
-WORKDIR /build
-RUN ansible-playbook software.yaml -i inventory
+RUN cd /build \
+ && ansible-playbook software.yaml -i inventory \
+ && rm -rf /build
+
+WORKDIR /
+CMD /bin/bash
