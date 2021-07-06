@@ -1,9 +1,9 @@
 FROM debian:buster
 
-# Install Ansible 2.10+ and prepare build directory
-RUN echo "deb http://deb.debian.org/debian testing main" >> /etc/apt/sources.list \
- && apt update \
- && apt install -y ansible \
+# Install latest Ansible and prepare build directory
+RUN apt update \
+ && apt install -y python3-pip python3-apt \
+ && pip3 install ansible \
  && mkdir -p /build
 
 # Copy and run Ansible playbooks locally
